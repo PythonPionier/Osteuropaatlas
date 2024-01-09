@@ -1,0 +1,200 @@
+
+% Definieren der Dokumentklasse
+\documentclass[ngerman, 11pt]{article}
+
+% T1 Font Encoding: Sonderzeichen ä,ü,ö,... als eigene Symbole
+\usepackage[T1]{fontenc}
+
+% UTF-8 Kodierung
+\usepackage[utf8]{inputenc}
+
+% Sprache Zeichensatz Deutsch
+\usepackage[ngerman]{babel}
+
+% Nutzen Mathematischer Symbole
+\usepackage{amsmath}
+
+% Nutzen weiterer Sonderzeichen
+\usepackage{amssymb}
+
+% Schriftart: helvet als Arial-Klon
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+% Anpassen des Zeilenabstandes
+\usepackage[singlespacing]{setspace}
+\setstretch{1.454545454545455}% Faktor: 16pt/11pt = 1.454545454545455
+
+% Rückung neuer Absätze
+\setlength\parindent{0pt}
+
+% Einbinden von Grafiken
+\usepackage{graphicx}
+\graphicspath{{../Karten}{.}}
+
+% Positionieren von Grafiken
+\usepackage[export]{adjustbox}
+
+% Definieren von Farben
+\usepackage[table]{xcolor}% table Option für die Farbgestaltung von Tabellen
+\definecolor{imreg}{RGB}{39, 89, 165}
+\definecolor{urlcol}{RGB}{0, 0, 238}
+
+% Erstellen von Verlinkungen und Pfaddarstellungen
+\usepackage[obeyspaces]{url}
+\usepackage{hyperref}
+\hypersetup{
+	breaklinks,
+	colorlinks,
+	linkcolor=black,
+	urlcolor=urlcol
+}
+
+% Zuschneiden der Seite
+\usepackage[paper=a4paper, top=40mm, bottom=27mm, left=20mm, right=20mm, headheight=61pt]{geometry}
+
+
+\usepackage{pdflscape}
+
+% Abstand der Bildüberschrift zum Bild
+\setlength{\belowcaptionskip}{15pt}
+
+% Nutzen und formattieren der Subfigure Umgebung
+\usepackage{subcaption}
+\captionsetup[subfigure]{labelformat=empty}
+
+
+% Definieren von Kopf- und Fußzeile
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{1.5pt}
+\let\oldheadrule\headrule\renewcommand{\headrule}{\color{imreg}\oldheadrule}
+\renewcommand{\footrulewidth}{1.5pt}
+\let\oldfootrule\footrule\renewcommand{\footrule}{\color{imreg}\oldfootrule}
+\fancyhead[L]{\nouppercase \leftmark}
+\fancyhead[C]{}
+\fancyhead[R]{\includegraphics[height=20mm]{imreg}}
+\fancyfoot[L]{\color{black} Stand: \today}
+\fancyfoot[C]{}
+\fancyfoot[R]{\color{black} \thepage}
+
+
+
+% Formatierung von Überschriften
+\usepackage{titlesec}
+% Hauptüberschriften
+\titleformat{\section}
+[block]% shape
+{\color{imreg} \Large}% format
+{\textbf{\thesection.}}% label
+{11pt}% horizontal separation
+{\textbf}% before-code
+[]% after-code
+% Hauptüberschriften
+\titleformat{\subsection}
+[block]% shape
+{\color{imreg} \large}% format
+{\textbf{\thesubsection.}}% label
+{11pt}% horizontal separation
+{\textbf}% before-code
+[]% after-code
+% Abstandsregel Hauptüberschriften
+\titlespacing{\section}
+{0pt}% left
+{0pt}% before
+{0pt}% after
+\titlespacing{\subsection}
+{0pt}% left
+{0pt}% before
+{0pt}% after
+
+
+% Bild-, Tabellen- & Kartenüberschriften
+\usepackage[figurename=Abb.]{caption}
+\DeclareCaptionFormat{imregCaption}{\normalsize \color{imreg} \textbf{#1#2#3}}
+\captionsetup{format=imregCaption, justification=centering, singlelinecheck=false}
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{0pt}
+
+
+% Formatieren der Listendarstellung
+\usepackage{tocloft}
+\renewcommand{\cftdot}{\ensuremath{}}
+\renewcommand\cfttoctitlefont{\Large \bfseries \color{imreg}}
+\renewcommand{\cftloftitlefont}{\Large \bfseries \color{imreg}}
+\renewcommand{\cftlottitlefont}{\Large \bfseries \color{imreg}}
+% Abbildungsverzeichnis
+\renewcommand{\cftfigpresnum}{Abb. }% Präfix
+\settowidth{\cftfignumwidth}{Abb. xx\quad}% Abstand bis Name
+\setlength\cftfigindent{0pt}% Rückung
+% Tabellenverzeichnis
+\renewcommand{\cfttabpresnum}{Tabelle }
+\settowidth{\cfttabnumwidth}{Tabelle xx\quad}
+\setlength\cfttabindent{0pt}
+% Zählfunktion für Karten
+\newcommand{\listmapname}{Kartenverzeichnis}
+\newlistof
+{maps}% Funktionsname
+{caption}% Platzhalter
+{\Large \color{imreg} \listmapname}% Name
+% Zählfunktion für Karten
+\newcommand{\maps}[1]{%
+	\refstepcounter{maps}
+	\par\noindent \textbf{\large \color{imreg} Karte \themaps: #1}
+	\addcontentsline{caption}{maps}{\normalsize Karte \themaps\quad\protect#1}\par}
+
+
+% Befehl zum Erstellen einer Leerseite
+\newcommand*\emptypage{\newpage\null\thispagestyle{empty}\newpage}
+
+% Befehl zum Einbinden einer Karte
+\newcommand{\karte}[3]{
+	\makebox[\linewidth][c]{
+		\begin{subfigure}{0.61\textwidth}
+			\centering
+			\caption{\\#2}
+			\includegraphics[width=\textwidth, height=172mm, center]{#1} 
+		\end{subfigure}
+		\begin{subfigure}{0.61\textwidth}
+			\centering
+			\caption{\\#3}
+			\includegraphics[width=\textwidth, height=172mm, center]{#1_Delta}
+		\end{subfigure}
+	}
+}
+
+
+
+% Informationen für das Deckblatt
+\title{M+E Osteuropaatlas}
+\author{Simon Gräfe}
+
+
+\usepackage{lipsum}
+
+
+
+\begin{document}
+
+	\tableofcontents
+	\listoffigures
+	\listofmaps
+	
+	\emptypage
+	\include{Kapitel/Wertschöpfung}
+	\emptypage
+	\include{Kapitel/Wirtschaftliche Strukturdaten}
+	\emptypage
+	\include{Kapitel/Einkommen}
+	\emptypage
+	\include{Kapitel/Bevölkerungsstruktur}
+	\emptypage
+	\include{Kapitel/Sozioökonomische Daten}
+	\emptypage
+	\include{Kapitel/FuE}
+	\emptypage
+	\include{Kapitel/Arbeitsmarkt}
+	\emptypage
+
+	
+\end{document}

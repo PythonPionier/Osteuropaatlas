@@ -35,7 +35,7 @@ create_labels <- function (breaks, einheit, delta = F) {
     }
     labs <- c(
         paste0("< ", formatted_breaks[1], einheit),
-        paste0(formatted_breaks[-length(breaks)], einheit, " bis ", formatted_breaks[-1], einheit),
+        paste0(formatted_breaks[-length(breaks)], " \u2014 ", formatted_breaks[-1], einheit),
         paste0("> ", formatted_breaks[length(breaks)], einheit)
     )
     formatted_labs <- format(labs, justify = "right")
@@ -54,7 +54,7 @@ red_scale <- function (breaks) {
     sapply(transp, im_col, colour = "dunkelrot")
 }
 
-# Erstelle ein Farbskala
+# Erstelle eine Farbskala
 fill_cols <- function (breaks) {
     if (all(breaks > 0)) {
         blue_scale(breaks)

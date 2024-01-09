@@ -1,8 +1,17 @@
 
-cntr_code <- c("EE", "LV", "LT", "PL", "CZ", "SK", "HU", "RO", "RS", "HR", "SI", "AL", "BG")
-
 # Bereite einen Eurostat-Datensatz auf
-prep_data <- function (data) {
+prep_data <- function (data, normalize = NULL) {
+
+    if (!is.null(normalize)) {
+        base <- read_xlsx(normalize)
+        joined <- left_join(data, base, by = "geo")
+        xs <- joined %>% select(matches("[0-9]{4}.x$"))
+        ys <- joined %>% select(matches("[0-9]{4}.y$"))
+        info <- joined %>% select(!matches("[0-9]{4}.x$|[0-9]{4}.y$")) %>% select(!matches("[0-9]{4}"))
+        norms <- xs / ys
+        names(norms) <- names(norms) %>% str_remove(".x$")
+        data <- cbind(info, norms) %>% as.data.frame()
+    }
 
     prepData <- data %>%
       # Zerlege geo in NUTS Variablen
@@ -29,7 +38,7 @@ prep_data <- function (data) {
 }
 
 # Lese einen Eurostat Datensatz ein und bereite ihn auf
-read_data <- function (name) {
-    read_xlsx(path = paste0("Daten/", name, ".xlsx")) %>% prep_data()
+read_data <- function (name, normalize = NULL) {
+    read_xlsx(path = paste0("Daten/", name, ".xlsx")) %>% prep_data(normalize = glue("Daten/{normalize}.xlsx"))
 }
 

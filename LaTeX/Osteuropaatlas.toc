@@ -1,0 +1,8 @@
+\babel@toc {ngerman}{}\relax 
+\contentsline {section}{\numberline {1}Bruttoinlandsprodukt \& Bruttowertschöpfung}{5}{section.1}%
+\contentsline {section}{\numberline {2}Wirtschaftliche Strukturdaten}{11}{section.2}%
+\contentsline {section}{\numberline {3}Einkommen}{29}{section.3}%
+\contentsline {section}{\numberline {4}Bevölkerungsstruktur}{39}{section.4}%
+\contentsline {section}{\numberline {5}Sozioökonomische Daten}{52}{section.5}%
+\contentsline {section}{\numberline {6}Forschung \& Entwicklung}{59}{section.6}%
+\contentsline {section}{\numberline {7}Arbeitsmarkt}{65}{section.7}%

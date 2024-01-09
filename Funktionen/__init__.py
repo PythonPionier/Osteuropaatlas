@@ -37,7 +37,7 @@ def get_data(code: str, filters: dict = dict()) -> pandas.DataFrame:
     return data
 
 
-def save_data(xlsx: str, code: str, filters: dict) -> None:
+def save_data(xlsx: str, code: str, filters: dict = dict()) -> None:
     """
     Speichern eines Eurostat Datensatzes als Excel-Datei
     :param xlsx: str, Name der Excel Datei
