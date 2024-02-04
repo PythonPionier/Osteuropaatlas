@@ -30,6 +30,8 @@ read_data("BIP_KKS_proKopf_TGS00005") %>% mutate(value = `2021`/1000, delta = (`
 read_data("BWS_Vol_NAMA_10R_2GVAGR") %>% mutate(value = `2020`, delta = (`2020`/`2015`-1)*100) %>% plot_map(name ="BWS_Vol", unit = "")
 read_data("BIP_Vol_NAMA_10R_2GVAGR") %>% mutate(value = `2020`, delta = (`2020`/`2015`-1)*100) %>% plot_map(name ="BIP_Vol", unit = "")
 
+
+
 # Wirtschaftliche Strukturdaten - Gesamt und im Verarbeitenden Gewerbe
 read_data("Arbeitsstunden_proErwerbstaetigen_NAMA_10R_2LP10") %>% mutate(value = `2020`/1000, delta = (`2020`/`2015`-1)*100) %>% plot_map(name ="Arbeitsstunden_proErwerbstaetigen", unit = " Tsd.h")
 read_data("Arbeitsstunden_geleistet_NAMA_10R_2EMHRW") %>% mutate(value = `2020`/1000000, delta = (`2020`/`2015`-1)*100) %>% plot_map(name ="Arbeitsstunden_geleistet", unit = " Mrd.h")
@@ -50,12 +52,13 @@ read_data("Arbeitnehmerentgelt_VG_NAMA_10R_2COE") %>% mutate(value = `2020`/1000
 read_data("StrukturVG_Lohn_SBS_R_NUTS06_R2") %>% mutate(value = `2020`/1000, delta = (`2020`/`2015`-1)*100) %>% plot_map(name ="StrukturVG_Lohn", unit = " Mrd.\u20ac")
 read_data("Entgelt_proHVG_NAMA_10R_2LP10") %>% mutate(value = `2020`, delta = (`2020`/`2015`-1)*100) %>% plot_map(name ="Entgelt_proHVG", unit = "\u20ac")
 read_data("AnlageninvestitionVG_NAMA_10R_2GFCF") %>% mutate(value = `2020`/1000, delta = (`2020`/`2015`-1)*100) %>% plot_map(name ="AnlageninvestitionVG", unit = " Mrd.\u20ac")
+read_data("AnlageninvestitionVG_NAMA_10R_2GFCF", normalize = "StrukturVG_BeschZahl_SBS_R_NUTS06_R2") %>% mutate(value = `2020`*1000, delta = (`2020`/`2015`-1)*100) %>% plot_map(name ="InvestitionsintensitaetVG", unit = " Tsd.\u20ac")
 
 # Einkommen
 read_data("Primaereinkommen_NAMA_10R_2HHINC") %>% mutate(value = `2020`/1000, delta = (`2020`/`2015`-1)*100) %>% plot_map(name ="Primaereinkommen", unit = " Tsd.\u20ac")
 read_data("VerfuegbaresEinkommen_Ausgaben_NAMA_10R_2HHINC") %>% mutate(value = `2020`/1000, delta = (`2020`/`2015`-1)*100) %>% plot_map(name ="VerfuegbaresEinkommen_Ausgaben", unit = " Tsd.\u20ac")
 read_data("Betriebsueberschuss_NAMA_10R_2HHINC") %>% mutate(value = `2020`/1000, delta = (`2020`/`2015`-1)*100) %>% plot_map(name ="Betriebsueberschuss", unit = " Mrd.\u20ac")
-read_data("Arbeitnehmerentgelt_NAMA_10R_2HHINC") %>% mutate(value = `2020`/1000, delta = (`2020`/`2015`-1)*100) %>% plot_map(name ="Arbeitnehmerentgelt_Einkommen", unit = " Mrd.\u20ac")
+read_data("Arbeitnehmerentgelt_Einkommen_NAMA_10R_2HHINC") %>% mutate(value = `2020`/1000, delta = (`2020`/`2015`-1)*100) %>% plot_map(name ="Arbeitnehmerentgelt_Einkommen", unit = " Mrd.\u20ac")
 read_data("Vermoegenseinkommen_NAMA_10R_2HHINC") %>% mutate(value = `2020`/1000, delta = (`2020`/`2015`-1)*100) %>% plot_map(name ="Vermoegenseinkommen", unit = " Mrd.\u20ac")
 read_data("Sozialleistungen_NAMA_10R_2HHINC") %>% mutate(value = `2020`/1000, delta = (`2020`/`2015`-1)*100) %>% plot_map(name ="Sozialleistungen", unit = " Mrd.\u20ac")
 read_data("SonstTransfers_NAMA_10R_2HHINC") %>% mutate(value = `2020`/1000, delta = (`2020`/`2015`-1)*100) %>% plot_map(name ="SonstTransfers", unit = " Mrd.\u20ac")
@@ -69,12 +72,13 @@ read_data("Haushalte_Stadt_LFST_R_LFSD2HH") %>% mutate(value = `2022`, delta = (
 read_data("Bevoelkerungsdichte_TGS00024") %>% mutate(value = `2022`, delta = (`2022`/`2015`-1)*100) %>% plot_map(name ="Bevoelkerungsdichte", unit = "P/km\u00b2")
 read_data("Bevoelkerungsveraenderung_Rate_TGS00099") %>% mutate(value = `2021`, delta = (`2021`/`2015`-1)*100) %>% plot_map(name ="Bevoelkerungsveraenderung_Rate", unit = " je Tsd.")
 read_data("NatBevoelkerungsveraenderung_Rate_TGS00099") %>% mutate(value = `2021`, delta = (`2021`/`2015`-1)*100) %>% plot_map(name ="NatBevoelkerungsveraenderung_Rate", unit = " je Tsd.")
-read_data("Wanderungssaldo_RatEinwohe_TGS00099") %>% mutate(value = `2021`, delta = (`2021`/`2015`-1)*100) %>% plot_map(name ="Wanderungssaldo_Rate", unit = " je Tsd.")
+read_data("Wanderungssaldo_Rate_TGS00099") %>% mutate(value = (`2021`+`2020`+`2019`+`2018`+`2017`+`2016`+`2015`)/7, delta = (`2021`/`2015`-1)*100) %>% plot_map(name ="Wanderungssaldo_Rate", unit = " je Tsd.")
 read_data("Medianalter_DEMO_R_PJANIND2") %>% mutate(value = `2022`, delta = (`2022`/`2015`-1)*100) %>% plot_map(name ="Medianalter", unit = " Jahre")
 read_data("Frauenquotient_DEMO_R_PJANIND2") %>% mutate(value = `2022`/100, delta = (`2022`/`2015`-1)*100) %>% plot_map(name ="Frauenquotient", unit = "%")
 read_data("Jugendquotient_DEMO_R_PJANIND2") %>% mutate(value = `2022`, delta = (`2022`/`2015`-1)*100) %>% plot_map(name ="Jugendquotient", unit = "%")
 read_data("Altenquotient_DEMO_R_PJANIND2") %>% mutate(value = `2022`, delta = (`2022`/`2015`-1)*100) %>% plot_map(name ="Altenquotient", unit = "%")
 read_data("Altersabhaengigkeitsquotient_DEMO_R_PJANIND2") %>% mutate(value = `2022`, delta = (`2022`/`2015`-1)*100) %>% plot_map(name ="Altersabhaengigkeitsquotient", unit = "%")
+read_data("Bevoelkerungsprognose_PROJ_19RP3") %>% mutate(value = `2050`/1000, delta = (`2050`/`2024`-1)*100) %>% plot_map(name ="Bevoelkerungsprognose", unit = " Tsd.")
 
 # Sozioökonomische Daten
 read_data("Lebenserwartung_TGS00101") %>% mutate(value = `2021`, delta = (`2021`/`2015`-1)*100) %>% plot_map(name ="Lebenserwartung", unit = " Jahre")
@@ -94,6 +98,7 @@ read_data("Forscher_Staat_RD_P_PERSREG") %>% mutate(value = `2021`, delta = (`20
 # Arbeitsmarkt
 read_data("Erwerbstaetige_LFST_R_LFE2EFTPT") %>% mutate(value = `2022`/1000, delta = (`2022`/`2015`-1)*100) %>% plot_map(name = "Erwerbstaetige", unit = " Mio.")
 read_data("Erwerbstaetigenquote_TGS00007") %>% mutate(value = `2022`, delta = (`2022`/`2015`-1)*100) %>% plot_map(name ="Erwerbstaetigenquote", unit = "%")
+read_data("Erwerbsbevoelkerungsprognose_PROJ_19RP3") %>% group_by(geo, nuts0, nuts1, nuts2, nuts3) %>% reframe(value = sum(`2050`, na.rm = T)/1000, delta = (sum(`2050`, na.rm = T)/ sum(`2024`, na.rm = T) - 1)*100) %>% left_join(shape_nuts %>% select(NUTS_ID), by = c("geo" = "NUTS_ID")) %>% st_as_sf(sf_column_name = "geometry") %>% plot_map(name ="Erwerbsbevoelkerungsprognose", unit = " Tsd.")
 read_data("Erwerbstaetige_Teilzeit_LFST_R_LFE2EFTPT", normalize = "Erwerbstaetige_LFST_R_LFE2EFTPT") %>% mutate(value = `2022`*100, delta = (`2022`/`2015`-1)*100) %>% plot_map("Teilzeitquote", unit = "%")
 read_data("Erwerbstaetigenquote_Frauen_LFST_R_LFE2EMPRC") %>% mutate(value = `2022`, delta = (`2022`/`2015`-1)*100) %>% plot_map(name ="Erwerbstaetigenquote_Frauen", unit = "%")
 read_data("Erwerbstaetigenquote_Maenner_LFST_R_LFE2EMPRC") %>% mutate(value = `2022`, delta = (`2022`/`2015`-1)*100) %>% plot_map(name ="Erwerbstaetigenquote_Maenner", unit = "%")
@@ -126,3 +131,23 @@ read_data("Geschlechterbeschaeftigung_TEPSR_LM220") %>% mutate(value = `2022`, d
 # Infrastruktur
 # read_data("Personenluftverkehrsleistung_TRAN_R_AVPA_NM") %>% mutate(value = `2021`/1000, delta = (`2021`/`2015`-1)*100) %>% plot_map(name ="Personenluftverkehrsleistung", unit = " Mio.")
 # read_data("Luftfrachtverkehr_TRAN_R_AVGO_NM") %>% mutate(value = `2021`, delta = (`2021`/`2015`-1)*100) %>% plot_map(name ="Luftfrachtverkehr", unit = " Tsd.t")
+
+# Metall- und Elektroindustrie
+read_old_new <- function(alt, neu) {
+    a <- read_data(name = alt) %>% group_by(geo, nuts0, nuts1, nuts2, nuts3) %>% reframe("2015" = sum(`2015`, na.rm = T), "2020" = sum(`2020`, na.rm = T)) %>% st_drop_geometry()
+    b <- read_data(name = neu) %>% group_by(geo, nuts0, nuts1, nuts2, nuts3) %>% reframe("2021" = sum(`2021`, na.rm = T)) %>% st_drop_geometry()
+    comb <- left_join(a,b, by = c("geo", "nuts0", "nuts1", "nuts2")) %>% left_join(shape_nuts %>% select(NUTS_ID), by = c("geo" = "NUTS_ID")) %>% st_as_sf(sf_column_name = "geometry")
+    return(comb)
+}
+
+read_old_new(alt = "ME_Besch_alt_SBS_R_NUTS06_R2", neu = "ME_Besch_SBS_R_NUTS2021") %>% mutate(value = `2021`/1000, delta = (`2021`/`2015`-1)*100) %>% plot_map(name = "ME_Besch", unit = " Tsd.")
+read_old_new(alt = "ME_Unt_alt_SBS_R_NUTS06_R2", neu = "ME_Unt_SBS_R_NUTS2021") %>% mutate(value = `2021`/1000, delta = (`2021`/`2015`-1)*100) %>% plot_map(name = "ME_Unt", unit = " Tsd.")
+read_old_new(alt = "ME_Entgelt_alt_SBS_R_NUTS06_R2", neu = "ME_Entgelt_SBS_R_NUTS2021") %>% mutate(value = `2021`/1000, delta = (`2021`/`2015`-1)*100) %>% plot_map(name = "ME_Entgelt", unit = " Mrd.\u20ac")
+
+unt <- read_old_new(alt = "ME_Unt_alt_SBS_R_NUTS06_R2", neu = "ME_Unt_SBS_R_NUTS2021") %>% st_drop_geometry()
+read_old_new(alt = "ME_Besch_alt_SBS_R_NUTS06_R2", neu = "ME_Besch_SBS_R_NUTS2021") %>% left_join(unt, by=c("geo", "nuts0", "nuts1", "nuts2")) %>% mutate(value = `2021.x`/`2021.y`, delta = (`2021.x`/`2021.y`*`2015.y`/`2015.x`-1)*100) %>% plot_map(name = "ME_BeschProBetrieb", "")
+ein <- read_data("Einwohnerzahl_DEMO_R_D2JAN") %>% st_drop_geometry()
+read_old_new(alt = "ME_Besch_alt_SBS_R_NUTS06_R2", neu = "ME_Besch_SBS_R_NUTS2021") %>% left_join(ein, by=c("geo", "nuts0", "nuts1", "nuts2")) %>% mutate(value = `2021.x`/`2021.y`*1000, delta = (`2021.x`/`2021.y`*`2015.y`/`2015.x`-1)*100) %>% plot_map(name = "ME_BeschProEW", " je Tsd.")
+beschVG <- read_data("StrukturVG_BeschZahl_SBS_R_NUTS06_R2") %>% st_drop_geometry()
+read_old_new(alt = "ME_Besch_alt_SBS_R_NUTS06_R2", neu = "ME_Besch_SBS_R_NUTS2021") %>% left_join(beschVG, by=c("geo", "nuts0", "nuts1", "nuts2")) %>% mutate(value = `2020.x`/`2020.y`*100, delta = (`2020.x`/`2020.y`*`2015.y`/`2015.x`-1)*100) %>% plot_map(name = "ME_AnteilBeschVG", "%")
+

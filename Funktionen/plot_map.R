@@ -4,6 +4,7 @@ plot_map <- function (data, name, unit) {
 
     # Erstellen der Legendenbeschriftung
     nuts2_data <- data %>% st_drop_geometry() %>% filter(!is.na(nuts2))
+    if(nrow(nuts2_data) == 0) nuts2_data <- data %>% st_drop_geometry() %>% filter(!is.na(nuts3))
     val_breaks <- nuts2_data %>% select(value) %>% unlist() %>% remove_outliers() %>% find_breaks()
     val_labs <- val_breaks %>% create_labels(unit)
     del_breaks <- nuts2_data %>% select(delta) %>% unlist() %>% remove_outliers() %>% find_breaks()
@@ -21,6 +22,7 @@ plot_map <- function (data, name, unit) {
       geom_sf(data = plotframe %>% filter(!is.na(nuts0)), aes(fill = val_fill)),
       geom_sf(data = plotframe %>% filter(!is.na(nuts1)), aes(fill = val_fill)),
       geom_sf(data = plotframe %>% filter(!is.na(nuts2)), aes(fill = val_fill)),
+      geom_sf(data = plotframe %>% filter(!is.na(nuts3)), aes(fill = val_fill)),
       scale_fill_manual(name = NULL, values = fill_cols(val_breaks), na.translate = FALSE, limits = rev(val_labs))
     )
 
@@ -30,6 +32,7 @@ plot_map <- function (data, name, unit) {
       geom_sf(data = plotframe %>% filter(!is.na(nuts0)), aes(fill = del_fill)),
       geom_sf(data = plotframe %>% filter(!is.na(nuts1)), aes(fill = del_fill)),
       geom_sf(data = plotframe %>% filter(!is.na(nuts2)), aes(fill = del_fill)),
+      geom_sf(data = plotframe %>% filter(!is.na(nuts3)), aes(fill = del_fill)),
       scale_fill_manual(name = NULL, values = fill_cols(del_breaks), na.translate = FALSE, limits = rev(del_labs))
     )
 

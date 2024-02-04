@@ -17,6 +17,9 @@
 % Nutzen weiterer Sonderzeichen
 \usepackage{amssymb}
 
+% Nutzen von Euro Symbolen
+\usepackage{eurosym}
+
 % Schriftart: helvet als Arial-Klon
 \usepackage{helvet}
 \renewcommand{\familydefault}{\sfdefault}
@@ -30,7 +33,7 @@
 
 % Einbinden von Grafiken
 \usepackage{graphicx}
-\graphicspath{{../Karten}{.}}
+\graphicspath{{../Karten}{.}{../Abbildungen}}
 
 % Positionieren von Grafiken
 \usepackage[export]{adjustbox}
@@ -39,6 +42,7 @@
 \usepackage[table]{xcolor}% table Option für die Farbgestaltung von Tabellen
 \definecolor{imreg}{RGB}{39, 89, 165}
 \definecolor{urlcol}{RGB}{0, 0, 238}
+\definecolor{imregdunkelrot}{RGB}{192, 0, 0}
 
 % Erstellen von Verlinkungen und Pfaddarstellungen
 \usepackage[obeyspaces]{url}
@@ -110,11 +114,11 @@
 
 
 % Bild-, Tabellen- & Kartenüberschriften
-\usepackage[figurename=Abb.]{caption}
+\usepackage{caption}
 \DeclareCaptionFormat{imregCaption}{\normalsize \color{imreg} \textbf{#1#2#3}}
 \captionsetup{format=imregCaption, justification=centering, singlelinecheck=false}
-\setlength{\abovecaptionskip}{0pt}
-\setlength{\belowcaptionskip}{0pt}
+%\setlength{\abovecaptionskip}{0pt}
+%\setlength{\belowcaptionskip}{0pt}
 
 
 % Formatieren der Listendarstellung
@@ -123,18 +127,22 @@
 \renewcommand\cfttoctitlefont{\Large \bfseries \color{imreg}}
 \renewcommand{\cftloftitlefont}{\Large \bfseries \color{imreg}}
 \renewcommand{\cftlottitlefont}{\Large \bfseries \color{imreg}}
+
 % Abbildungsverzeichnis
-\renewcommand{\cftfigpresnum}{Abb. }% Präfix
-\settowidth{\cftfignumwidth}{Abb. xx\quad}% Abstand bis Name
+\renewcommand{\cftfigpresnum}{Abbildung }% Präfix
+\settowidth{\cftfignumwidth}{Abbildung xx\quad}% Abstand bis Name
 \setlength\cftfigindent{0pt}% Rückung
+
 % Tabellenverzeichnis
 \renewcommand{\cfttabpresnum}{Tabelle }
 \settowidth{\cfttabnumwidth}{Tabelle xx\quad}
 \setlength\cfttabindent{0pt}
+
+
 % Zählfunktion für Karten
 \newcommand{\listmapname}{Kartenverzeichnis}
 \newlistof
-{maps}% Funktionsname
+{maps}% Zählvariable
 {caption}% Platzhalter
 {\Large \color{imreg} \listmapname}% Name
 % Zählfunktion für Karten
@@ -149,16 +157,17 @@
 
 % Befehl zum Einbinden einer Karte
 \newcommand{\karte}[3]{
+	\vspace{15pt}
 	\makebox[\linewidth][c]{
 		\begin{subfigure}{0.61\textwidth}
 			\centering
 			\caption{\\#2}
-			\includegraphics[width=\textwidth, height=172mm, center]{#1} 
+			\includegraphics*[width=\textwidth, height=172mm, center]{#1} 
 		\end{subfigure}
 		\begin{subfigure}{0.61\textwidth}
 			\centering
 			\caption{\\#3}
-			\includegraphics[width=\textwidth, height=172mm, center]{#1_Delta}
+			\includegraphics*[width=\textwidth, height=172mm, center]{#1_Delta}
 		\end{subfigure}
 	}
 }
@@ -172,29 +181,62 @@
 
 \usepackage{lipsum}
 
+\usepackage{datetime}
+\newdateformat{monthyeardate}{\monthname[\THEMONTH] \THEYEAR}
 
+\usepackage[pages=some]{background}
+\usepackage{tabularray}
 
 \begin{document}
-
+	\newgeometry{paper=a4paper, margin=0pt}
+	\begin{titlepage}
+		\backgroundsetup{contents=\includegraphics{Titelhindergrund}, angle=0, scale=1, opacity=.1}
+		\BgThispage
+		\restoregeometry
+		\centering
+		\vspace{2.5cm}
+		{\color{imreg}\noindent\rule[1ex]{\textwidth}{11pt}\par}
+		{\huge\bfseries Atlas zur M+E-Wirtschaft in Osteuropa\par}
+		\vspace{1cm}
+		{\color{imreg}\noindent\rule[1ex]{\textwidth}{11pt}\par}
+		\vspace{2cm}
+		{\includegraphics[width=.5\textwidth]{imreg}\par}
+		\vspace{2cm}
+		{\scshape\Large\bfseries Langfassung\par}
+		\vspace{1cm}
+		{\scshape\Large\bfseries Aktualisierte Neuauflage\par}
+		\vfill
+		{\Large\itshape\bfseries Simon Gräfe\par}
+		\vfill
+		% Bottom of the page
+		{\large\bfseries \monthyeardate\today \par}
+		\vfill
+	\end{titlepage}
+	\restoregeometry
+	
+	\emptypage 
 	\tableofcontents
-	\listoffigures
-	\listofmaps
+	\newpage\listoftables
+	\newpage\listoffigures
+	\newpage\listofmaps
 	
 	\emptypage
 	\include{Kapitel/Wertschöpfung}
 	\emptypage
 	\include{Kapitel/Wirtschaftliche Strukturdaten}
 	\emptypage
-	\include{Kapitel/Einkommen}
+	\include{Kapitel/Arbeitsmarkt}
+	\emptypage
+	\include{Kapitel/MuE}
+	\emptypage
+	\include{Kapitel/FuE}
 	\emptypage
 	\include{Kapitel/Bevölkerungsstruktur}
 	\emptypage
 	\include{Kapitel/Sozioökonomische Daten}
 	\emptypage
-	\include{Kapitel/FuE}
+	\include{Kapitel/Einkommen}
 	\emptypage
-	\include{Kapitel/Arbeitsmarkt}
-	\emptypage
-
+	\include{Kapitel/Hinweise Definitionen}
 	
 \end{document}

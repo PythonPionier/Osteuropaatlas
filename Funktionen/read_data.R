@@ -1,4 +1,4 @@
-
+data <- read_xlsx("Daten/Arbeitnehmerentgelt_NAMA_10R_2COE.xlsx")
 # Bereite einen Eurostat-Datensatz auf
 prep_data <- function (data, normalize = NULL) {
 
@@ -20,6 +20,7 @@ prep_data <- function (data, normalize = NULL) {
         nuts0 = if_else(nchar(geo) >= 2, geo %>% str_extract(pattern = "^.."), NA),
         nuts1 = if_else(nchar(geo) >= 3, geo %>% str_extract(pattern = "^..."), NA),
         nuts2 = if_else(nchar(geo) >= 4, geo %>% str_extract(pattern = "^...."), NA),
+        nuts3 = if_else(nchar(geo) >= 5, geo %>% str_extract(pattern = "^....."), NA)
       ) %>%
       # Filtere nach Ländern + Sachsen
       filter(nuts0 %in% cntr_code | nuts1 == "DED") %>%
@@ -27,8 +28,9 @@ prep_data <- function (data, normalize = NULL) {
       left_join(shape_nuts %>% select(NUTS_ID), by = c("geo" = "NUTS_ID")) %>%
       # Korrigiere doppelte NUTS-Zuordnungen
       mutate(
-        nuts0 = if_else(is.na(nuts1) & is.na(nuts2), nuts0, NA),
-        nuts1 = if_else(is.na(nuts0) & is.na(nuts2), nuts1, NA)
+        nuts0 = if_else(is.na(nuts1) & is.na(nuts2) & is.na(nuts3), nuts0, NA),
+        nuts1 = if_else(is.na(nuts2) & is.na(nuts3), nuts1, NA),
+        nuts2 = if_else(is.na(nuts3), nuts2, NA)
       )
 
     # Ändere Klasse zu sf
@@ -39,6 +41,10 @@ prep_data <- function (data, normalize = NULL) {
 
 # Lese einen Eurostat Datensatz ein und bereite ihn auf
 read_data <- function (name, normalize = NULL) {
-    read_xlsx(path = paste0("Daten/", name, ".xlsx")) %>% prep_data(normalize = glue("Daten/{normalize}.xlsx"))
+    if (is.null(normalize)) {
+         read_xlsx(path = paste0("Daten/", name, ".xlsx")) %>% prep_data()
+    } else {
+         read_xlsx(path = paste0("Daten/", name, ".xlsx")) %>% prep_data(normalize = glue("Daten/{normalize}.xlsx"))
+    }
 }
 

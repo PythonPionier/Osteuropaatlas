@@ -1,8 +1,111 @@
 \babel@toc {ngerman}{}\relax 
-\contentsline {section}{\numberline {1}Bruttoinlandsprodukt \& Bruttowertschöpfung}{5}{section.1}%
-\contentsline {section}{\numberline {2}Wirtschaftliche Strukturdaten}{11}{section.2}%
-\contentsline {section}{\numberline {3}Einkommen}{29}{section.3}%
-\contentsline {section}{\numberline {4}Bevölkerungsstruktur}{39}{section.4}%
-\contentsline {section}{\numberline {5}Sozioökonomische Daten}{52}{section.5}%
-\contentsline {section}{\numberline {6}Forschung \& Entwicklung}{59}{section.6}%
-\contentsline {section}{\numberline {7}Arbeitsmarkt}{65}{section.7}%
+\contentsline {section}{\numberline {1}Bruttoinlandsprodukt \& Bruttowertschöpfung}{12}{section.1}%
+\contentsline {subsection}{Wechselkurse Osteuropäischer Währungen}{12}{table.caption.1}%
+\contentsline {subsection}{Wechselkursindex}{12}{figure.caption.2}%
+\contentsline {subsection}{Bruttoinlandsprodukt (in realen Preisen)}{13}{figure.caption.3}%
+\contentsline {subsection}{Bruttoinlandsprodukt je Einwohner}{14}{figure.caption.4}%
+\contentsline {subsection}{Bruttoinlandsprodukt (in Kaufkraftstandards)}{15}{figure.caption.5}%
+\contentsline {subsection}{Bruttoinlandsprodukt je Einwohner (in Kaufkraftstandards)}{16}{figure.caption.6}%
+\contentsline {subsection}{Entwicklung Volumenindex}{17}{figure.caption.7}%
+\contentsline {section}{\numberline {2}Wirtschaftliche Strukturdaten}{19}{section.2}%
+\contentsline {subsection}{IMD Wirtschaftsleistungsranking}{19}{figure.caption.8}%
+\contentsline {subsection}{Arbeitsstunden}{20}{figure.caption.9}%
+\contentsline {subsection}{Arbeitsstunden je Erwerbstätigen}{21}{figure.caption.10}%
+\contentsline {subsection}{Arbeitnehmerentgelt}{22}{figure.caption.11}%
+\contentsline {subsection}{Arbeitnehmerentgelt je Arbeitnehmer}{23}{figure.caption.12}%
+\contentsline {subsection}{Arbeitnehmerentgelt je Arbeitsstunde}{24}{figure.caption.13}%
+\contentsline {subsection}{Arbeitproduktivität je Erwerbestätigen (nominal)}{25}{figure.caption.14}%
+\contentsline {subsection}{Arbeitproduktivität je Arbeitsstunde (nominal)}{26}{figure.caption.15}%
+\contentsline {subsection}{Entwicklung Arbeitsproduktivität (real)}{27}{figure.caption.16}%
+\contentsline {subsection}{Anlageninvestitionen}{28}{figure.caption.17}%
+\contentsline {subsection}{Anzahl Unternehmen im Verarbeitenden Gewerbe}{29}{figure.caption.18}%
+\contentsline {subsection}{Anzahl Beschäftigter im Verarbeitenden Gewerbe}{30}{figure.caption.19}%
+\contentsline {subsection}{Anteil Beschäftigter im Verarbeitenden Gewerbe an allen Beschäftigten}{31}{figure.caption.20}%
+\contentsline {subsection}{Arbeitsstunden im Verarbeitenden Gewerbe}{32}{figure.caption.21}%
+\contentsline {subsection}{Arbeitnehmerentgelt im Verarbeitenden Gewerbe}{33}{figure.caption.22}%
+\contentsline {subsection}{Lohn \& Gehalt im Verarbeitenden Gewerbe}{34}{figure.caption.23}%
+\contentsline {subsection}{Arbeitnehmerentgelt je Arbeitsstunde im Verarbeitenden Gewerbe}{35}{figure.caption.24}%
+\contentsline {subsection}{Anlageninvestitionen im Verarbeitenden Gewerbe}{36}{figure.caption.25}%
+\contentsline {subsection}{Investitionsintensität im Verarbeitenden Gewerbe}{37}{figure.caption.26}%
+\contentsline {section}{\numberline {3}Arbeitsmarkt}{39}{section.3}%
+\contentsline {subsection}{Erwerbstätige}{40}{figure.caption.27}%
+\contentsline {subsection}{Erwerbstätigenquote}{41}{figure.caption.28}%
+\contentsline {subsection}{Erwerbstätigenprognose}{42}{figure.caption.29}%
+\contentsline {subsection}{Teilzeitquote}{43}{figure.caption.30}%
+\contentsline {subsection}{Erwerbstätigenquote Frauen}{44}{figure.caption.31}%
+\contentsline {subsection}{Erwerbstätigenquote Männer}{45}{figure.caption.32}%
+\contentsline {subsection}{Erwerbstätigenquote Niedrigqualifizierter}{46}{figure.caption.33}%
+\contentsline {subsection}{Erwerbstätigenquote Mittelqualifizierter}{47}{figure.caption.34}%
+\contentsline {subsection}{Erwerbstätigenquote Hochqualifizierter}{48}{figure.caption.35}%
+\contentsline {subsection}{Erwerbstätigenquote im Inland Geborener}{49}{figure.caption.36}%
+\contentsline {subsection}{Erwerbstätigenquote im Ausland Geborener}{50}{figure.caption.37}%
+\contentsline {subsection}{Jugenderwerbstätigenquote}{51}{figure.caption.38}%
+\contentsline {subsection}{Erwerbspersonen}{52}{figure.caption.39}%
+\contentsline {subsection}{Weibliche Erwerbspersonen}{53}{figure.caption.40}%
+\contentsline {subsection}{Männliche Erwerbspersonen}{54}{figure.caption.41}%
+\contentsline {subsection}{Niedrigqualizifierte Erwerbspersonen}{55}{figure.caption.42}%
+\contentsline {subsection}{Mittelqualifizierte Erwerbspersonen}{56}{figure.caption.43}%
+\contentsline {subsection}{Hochqualifizierte Erwerbspersonen}{57}{figure.caption.44}%
+\contentsline {subsection}{Arbeitslosenquote}{58}{figure.caption.45}%
+\contentsline {subsection}{Arbeitslosenquote Frauen}{59}{figure.caption.46}%
+\contentsline {subsection}{Arbeitslosenquote Männer}{60}{figure.caption.47}%
+\contentsline {subsection}{Arbeitslosenquote Niedrigqualifizierter}{61}{figure.caption.48}%
+\contentsline {subsection}{Arbeitslosenquote Mittelqualifizierter}{62}{figure.caption.49}%
+\contentsline {subsection}{Arbeitslosenquote Hochqualifizierter}{63}{figure.caption.50}%
+\contentsline {subsection}{Ungenutzes Arbeitsmarktpotential}{64}{figure.caption.51}%
+\contentsline {subsection}{Ungenutzes Arbeitsmarktpotential Frauen}{65}{figure.caption.52}%
+\contentsline {subsection}{Ungenutzes Arbeitsmarktpotential Männer}{66}{figure.caption.53}%
+\contentsline {subsection}{Arbeitsmarktnachfrage IKT}{67}{figure.caption.54}%
+\contentsline {subsection}{Wochenarbeitszeit}{68}{figure.caption.55}%
+\contentsline {subsection}{Langzeitbeschäftigung}{69}{figure.caption.56}%
+\contentsline {subsection}{Geschlechtsspezifischer Beschäftigungsunterschied}{70}{figure.caption.57}%
+\contentsline {section}{\numberline {4}Metall \& Elektroindustrie}{72}{section.4}%
+\contentsline {subsection}{Strukturdaten der M+E-Wirtschaft in Osteuropa}{72}{table.caption.58}%
+\contentsline {subsection}{M+E-Beschäftigtenzahl}{73}{figure.caption.59}%
+\contentsline {subsection}{M+E-Unternehmenszahl}{74}{figure.caption.60}%
+\contentsline {subsection}{M+E-Lohn- \& Gehaltssumme}{75}{figure.caption.61}%
+\contentsline {subsection}{M+E-Beschäftigte je Betrieb}{76}{figure.caption.62}%
+\contentsline {subsection}{M+E-Beschäftigte je Tsd. Einwohner}{77}{figure.caption.63}%
+\contentsline {subsection}{M+E-Beschäftigte je Tsd. Einwohner}{78}{figure.caption.64}%
+\contentsline {section}{\numberline {5}Forschung \& Entwicklung}{80}{section.5}%
+\contentsline {subsection}{Ausgabenanteil in Forschung \& Entwicklung}{81}{figure.caption.65}%
+\contentsline {subsection}{Forscheranteil}{82}{figure.caption.66}%
+\contentsline {subsection}{Anteil Forscher in Unternehmen}{83}{figure.caption.67}%
+\contentsline {subsection}{Anteil Forscher an Hochschulen}{84}{figure.caption.68}%
+\contentsline {subsection}{Anteil Forscher im Staatsdienst}{85}{figure.caption.69}%
+\contentsline {section}{\numberline {6}Bevölkerungsstruktur}{87}{section.6}%
+\contentsline {subsection}{Einwohner, Bevölkerung \& Einwohnerdichte}{87}{table.caption.70}%
+\contentsline {subsection}{Bevölkerungsverteilung nach Altersjahren}{88}{figure.caption.71}%
+\contentsline {subsection}{Einwohnerzahl}{89}{figure.caption.72}%
+\contentsline {subsection}{Anzahl Haushalte}{90}{figure.caption.73}%
+\contentsline {subsection}{Anzahl Haushalte in Städten}{91}{figure.caption.74}%
+\contentsline {subsection}{Bevölkerungsdichte}{92}{figure.caption.75}%
+\contentsline {subsection}{Bevölkerungsveränderung}{93}{figure.caption.76}%
+\contentsline {subsection}{Natürliche Bevölkerungsveränderung}{94}{figure.caption.77}%
+\contentsline {subsection}{Wanderungssaldo}{95}{figure.caption.78}%
+\contentsline {subsection}{Altersdurchschnitt (Median)}{96}{figure.caption.79}%
+\contentsline {subsection}{Frauenquotient}{97}{figure.caption.80}%
+\contentsline {subsection}{Jugendquotient}{98}{figure.caption.81}%
+\contentsline {subsection}{Altenquotient}{99}{figure.caption.82}%
+\contentsline {subsection}{Altersabhängigkeitsquotient}{100}{figure.caption.83}%
+\contentsline {subsection}{Bevölkerungsprognose 2050}{101}{figure.caption.84}%
+\contentsline {section}{\numberline {7}Sozioökonomische Daten}{103}{section.7}%
+\contentsline {subsection}{Lebenserwartung bei Geburt}{104}{figure.caption.85}%
+\contentsline {subsection}{Geburtenrate je Frau}{105}{figure.caption.86}%
+\contentsline {subsection}{Armutsgefährdungsrate}{106}{figure.caption.87}%
+\contentsline {subsection}{Auspendler}{107}{figure.caption.88}%
+\contentsline {subsection}{Weiterbildungsquote}{108}{figure.caption.89}%
+\contentsline {subsection}{Bevölkerungsanteil mit Tertiärabschluss}{109}{figure.caption.90}%
+\contentsline {section}{\numberline {8}Einkommen}{111}{section.8}%
+\contentsline {subsection}{Primäreinkommen}{112}{figure.caption.91}%
+\contentsline {subsection}{Verfügbares Einkommen}{113}{figure.caption.92}%
+\contentsline {subsection}{Betriebsüberschuss \& Selbstständigeneinkommen}{114}{figure.caption.93}%
+\contentsline {subsection}{Arbeitnehmerentgelt}{115}{figure.caption.94}%
+\contentsline {subsection}{Vermögenseinkommen}{116}{figure.caption.95}%
+\contentsline {subsection}{Einkommen aus Sozialleistungen}{117}{figure.caption.96}%
+\contentsline {subsection}{Einkommen aus sonstigen Transfers}{118}{figure.caption.97}%
+\contentsline {subsection}{Steueraufkommen durch Einkommen \& Vermögen}{119}{figure.caption.98}%
+\contentsline {subsection}{Geleistete Sozialbeiträge}{120}{figure.caption.99}%
+\contentsline {section}{\numberline {9}Hinweise \& Definitionen}{122}{section.9}%
+\contentsline {subsection}{Übersicht der NUTS-2-Regionen}{123}{figure.caption.102}%
+\contentsline {subsection}{Übersicht der ausgewerteten Regionen nach NUTS-Systematik}{125}{table.caption.101}%

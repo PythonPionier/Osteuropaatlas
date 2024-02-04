@@ -5,7 +5,7 @@ from Funktionen import get_params
 # get_params(): Drucke den Parameterraum einer Eurostat-Statistik in der Konsole
 # save_data(): Speichere einen Eurostat-NUTS-Datensatz unter Daten/
 
-get_params("TRAN_R_RAGO")
+# get_params("SBS_SC_SCA_R2")
 
 # Wertschöpfung
 save_data("BIP", "NAMA_10R_2GDP", {"unit": "MIO_EUR"})
@@ -60,6 +60,7 @@ save_data("Frauenquotient", "DEMO_R_PJANIND2", {"indic_de": "PC_FM", "unit": "PC
 save_data("Jugendquotient", "DEMO_R_PJANIND2", {"indic_de": "YOUNGDEP1", "unit": "PC"})
 save_data("Altenquotient", "DEMO_R_PJANIND2", {"indic_de": "OLDDEP1", "unit": "PC"})
 save_data("Altersabhaengigkeitsquotient", "DEMO_R_PJANIND2", {"indic_de": "DEPRATIO1", "unit": "PC"})
+save_data("Bevoelkerungsprognose", "PROJ_19RP3", {"projection": "BSL", "age": "TOTAL", "sex": "T"})
 
 # Sozioökonomische Daten
 save_data("Lebenserwartung", "TGS00101", {"sex": "T"})
@@ -79,6 +80,7 @@ save_data("Forscher_Staat", "RD_P_PERSREG", {"prof_pos": "TOTAL", "sex": "T", "s
 # Arbeitsmarkt
 save_data("Erwerbstaetige", "LFST_R_LFE2EFTPT", {"worktime": "TOTAL", "wstatus": "EMP", "age": "Y15-64", "sex": "T"})
 save_data("Erwerbstaetigenquote", "TGS00007", {"sex": "T"})
+save_data("Erwerbsbevoelkerungsprognose", "PROJ_19RP3", {"projection": "BSL", "sex": "T", "age": ['Y15', 'Y16', 'Y17', 'Y18', 'Y19', 'Y20', 'Y21', 'Y22', 'Y23', 'Y24', 'Y25', 'Y26', 'Y27', 'Y28', 'Y29', 'Y30', 'Y31', 'Y32', 'Y33', 'Y34', 'Y35', 'Y36', 'Y37', 'Y38', 'Y39', 'Y40', 'Y41', 'Y42', 'Y43', 'Y44', 'Y45', 'Y46', 'Y47', 'Y48', 'Y49', 'Y50', 'Y51', 'Y52', 'Y53', 'Y54', 'Y55', 'Y56', 'Y57', 'Y58', 'Y59', 'Y60', 'Y61', 'Y62', 'Y63', 'Y64']})
 save_data("Erwerbstaetige_Teilzeit", "LFST_R_LFE2EFTPT", {"worktime": "PT", "wstatus": "EMP", "age": "Y15-64", "sex": "T"})
 save_data("Erwerbstaetigenquote_Frauen", "LFST_R_LFE2EMPRC", {"c_birth": "TOTAL", "isced11": "TOTAL", "age": "Y15-64", "sex": "F"})
 save_data("Erwerbstaetigenquote_Maenner", "LFST_R_LFE2EMPRC", {"c_birth": "TOTAL", "isced11": "TOTAL", "age": "Y15-64", "sex": "M"})
@@ -111,3 +113,16 @@ save_data("Geschlechterbeschaeftigung", "TEPSR_LM220")
 # Infrastruktur
 save_data("Personenluftverkehrsleistung", "TRAN_R_AVPA_NM", {"tra_meas": "PAS_CRD"})
 save_data("Luftfrachtverkehr", "TRAN_R_AVGO_NM", {"tra_meas": "FRM_LD_NLD"})
+
+# M+E Daten
+save_data("ME_Besch", "SBS_R_NUTS2021", {"indic_sbs": "EMP_LOC_NR", "nace_r2": ['C24', 'C25', 'C26', 'C27', 'C28', 'C29', 'C30', 'C32', 'C33']})
+save_data("ME_Besch_alt", "SBS_R_NUTS06_R2", {"indic_sb": "V16110", "nace_r2": ['C24', 'C25', 'C26', 'C27', 'C28', 'C29', 'C30', 'C32', 'C33']})
+save_data("ME_Unt", "SBS_R_NUTS2021", {"indic_sbs": "LOC_NR", "nace_r2": ['C24', 'C25', 'C26', 'C27', 'C28', 'C29', 'C30', 'C32', 'C33']})
+save_data("ME_Unt_alt", "SBS_R_NUTS06_R2", {"indic_sb": "V11210", "nace_r2": ['C24', 'C25', 'C26', 'C27', 'C28', 'C29', 'C30', 'C32', 'C33']})
+save_data("ME_Entgelt", "SBS_R_NUTS2021", {"indic_sbs": "WAGE_LOC_MEUR", "nace_r2": ['C24', 'C25', 'C26', 'C27', 'C28', 'C29', 'C30', 'C32', 'C33']})
+save_data("ME_Entgelt_alt", "SBS_R_NUTS06_R2", {"indic_sb": "V13320", "nace_r2": ['C24', 'C25', 'C26', 'C27', 'C28', 'C29', 'C30', 'C32', 'C33']})
+
+
+# Daten für Abbildungen und Tabellen
+save_data("Bevoelkerungsverteilung", "PROJ_19RP3", {"startPeriod": 2024, "endPeriod": 2024, "projection": "BSL"})
+save_data("Flaeche", "REG_AREA3", {"landuse": "TOTAL"})

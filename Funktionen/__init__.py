@@ -37,14 +37,21 @@ def get_data(code: str, filters: dict = dict()) -> pandas.DataFrame:
     return data
 
 
-def save_data(xlsx: str, code: str, filters: dict = dict()) -> None:
+def save_data(xlsx: str, code: str, filters: dict = dict(), path: str = None) -> None:
     """
     Speichern eines Eurostat Datensatzes als Excel-Datei
     :param xlsx: str, Name der Excel Datei
     :param code: str, Kodierung des Eurostat Datensatzes
     :param filters: dict, Parameterraum, der von get_params ausgegeben wird
+    :param path: str, Pfad-Präfix
     :return: None
     """
     data: pandas.DataFrame = get_data(code, filters)
-    with pandas.ExcelWriter(path=f"Daten/{xlsx}_{code}.xlsx") as writer:
-        data.to_excel(writer, index=False, sheet_name="Daten")
+    print(f"Speichere Daten/{xlsx}_{code}.xlsx...")
+    if path is None:
+        with pandas.ExcelWriter(path=f"Daten/{xlsx}_{code}.xlsx") as writer:
+            data.to_excel(writer, index=False, sheet_name="Daten")
+    else:
+        with pandas.ExcelWriter(path=f"{path}/{xlsx}_{code}.xlsx") as writer:
+            data.to_excel(writer, index=False, sheet_name="Daten")
+    print("...fertig!")
