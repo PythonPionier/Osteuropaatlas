@@ -1,1 +1,1 @@
-LaTeX/Osteuropaatlas.pdf
+[Link zum Osteuropaatlas](LaTeX/Osteuropaatlas.pdf)
